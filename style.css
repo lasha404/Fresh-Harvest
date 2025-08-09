@@ -725,3 +725,56 @@ header{ position: sticky; top:0; z-index:1000; }
     position:absolute; z-index: 1100;
   }
 }
+/* ===== Desktop header/navbar reset & layout (>=769px) ===== */
+@media (min-width: 769px){
+  header{
+    position: sticky; top: 0; z-index: 1000; background: #fff;
+  }
+
+  /* container-level layout */
+  header .container{
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; min-height: 72px;
+  }
+
+  /* logo + title inline */
+  .logo{ display:flex; align-items:center; gap:12px; }
+  .logo img{ height: 40px; width: auto; }
+  .logo h1{ margin:0; line-height:1; }
+
+  /* bring nav back to inline desktop mode */
+  #main-nav{
+    position: static;           /* undo mobile fixed panel */
+    transform: none;
+    opacity: 1; visibility: visible;
+    max-height: none; overflow: visible;
+    background: transparent; padding: 0; border-top: 0;
+    z-index: auto;
+  }
+
+  /* horizontal list */
+  #main-nav > ul{
+    display: flex; align-items: center; gap: 24px;
+    list-style: none; margin: 0; padding: 0;
+  }
+
+  /* dropdowns are absolute under their parent */
+  .dropdown{ position: relative; }
+  .dropdown > a{ display: inline-flex; align-items: center; gap: 8px; }
+  .dropdown .dropdown-menu{
+    position: absolute; top: 100%; left: 0;
+    display: none; background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    border-radius: 12px; padding: 8px; min-width: 200px;
+    z-index: 1100;
+  }
+  .dropdown.active > .dropdown-menu,
+  .dropdown:hover > .dropdown-menu{ display: block; }
+
+  /* hamburger/backdrop not needed on desktop */
+  .mobile-menu-btn{ display: none !important; }
+  .nav-backdrop{ display: none !important; }
+
+  /* ensure nothing clips dropdowns */
+  header, nav, #main-nav, .dropdown{ overflow: visible !important; }
+}
