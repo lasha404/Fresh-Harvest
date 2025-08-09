@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="დაგვიკავშირდით - Fresh Harvest">
+    <meta name="keywords" content="კონტაქტი, ფერმის პროდუქტები, ორგანული მწვანილი">
+    <title>კონტაქტი - Fresh Harvest</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./fresh.svg" alt="Fresh Harvest Logo">
+                        <h1>FRESH HARVEST</h1>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn">☰</button>
+                <nav id="main-nav">
+                    <ul class="navbar">
+                        <li><a href="./index.html">მთავარი</a></li>
+                        <li class="dropdown">
+                            <a href="#">პროდუქტები</a>
+                            <div class="dropdown-menu">
+                                <a href="./products/lettuce.html">სალათის ფურცლები</a>
+                                <a href="./products/arugula.html">რუკოლა</a>
+                                <a href="./products/microgreens.html">მიკრომწვანილები</a>
+                                <a href="./products/red_kale.html">წითელი ფხალი</a>
+                                <a href="./products/leek.html">პრასი</a>
+                            </div>
+                        </li>
+                        <li><a href="./index.html#about">ჩვენს შესახებ</a></li>
+                        <li><a href="./contact.html" class="active">კონტაქტი</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="container">
+            <h2>დაგვიკავშირდით</h2>
+            <p>გაქვთ შეკითხვები ან გსურთ შეკვეთა? მოგვწერეთ ან დაგვირეკეთ — ყოველთვის მზად ვართ დახმარებისთვის!</p>
+
+            <div class="contact-wrapper">
+                <form class="contact-form">
+                    <label for="name">სახელი</label>
+                    <input type="text" id="name" name="name" placeholder="თქვენი სახელი" required>
+
+                    <label for="email">ელ.ფოსტა</label>
+                    <input type="email" id="email" name="email" placeholder="თქვენი ელ.ფოსტა" required>
+
+                    <label for="message">შეტყობინება</label>
+                    <textarea id="message" name="message" rows="5" placeholder="თქვენი შეტყობინება" required></textarea>
+
+                    <button type="submit">გაგზავნა</button>
+                </form>
+
+                <div class="contact-info-box">
+                    <h3>საკონტაქტო ინფორმაცია</h3>
+                    <p><strong>მისამართი:</strong> მისამართი 123</p>
+                    <p><strong>ტელეფონი:</strong> 853-123-4557</p>
+                    <p><strong>ელ.ფოსტა:</strong> info@freshharvest.ge</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./fresh.svg" alt="Fresh Harvest Logo">
+                    <h3>FRESH HARVEST</h3>
+                </div>
+                <div class="contact-info">
+                    <p>მისამართი 123</p>
+                    <p>Phone: 853-123-4557</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
