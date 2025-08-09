@@ -10,38 +10,42 @@
 <link href="./style.css" rel="stylesheet"/>
 </head>
 <body>
-<!-- Header -->
+  
 <header>
-<div class="container">
-<div class="header-content">
-<div class="logo">
-<a href="../index.html">
-<img alt="Fresh Harvest Logo" src="./fresh.svg"/>
-<h1>FRESH HARVEST</h1>
-</a>
-</div>
-<button class="mobile-menu-btn">☰</button>
-<nav id="main-nav">
-<ul class="navbar">
-<li><a href="index.html">მთავარი</a></li>
-<li class="dropdown">
-<a href="#">პროდუქტები</a>
-<div class="dropdown-menu">
-<a href="products/lettuce.html">სალათის ფურცლები</a>
-<a href="products/arugula.html">რუკოლა</a>
-<a href="products/microgreens.html">მიკრომწვანილები</a>
-<a href="products/red_kale.html">წითელი ფხალი</a>
-<a href="products/leek.html">პრასი</a>
-</div>
-</li>
-<li><a href="#about">ჩვენს შესახებ</a></li>
-<li><a href="./contact.html">კონტაქტი</a></li>
-</ul>
-</nav>
-</div>
-</div>
-</header><div class="nav-backdrop" aria-hidden="true"></div>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./fresh.svg" alt="Fresh Harvest Logo">
+          <h1>FRESH HARVEST</h1>
+        </a>
+      </div>
 
+      <button class="mobile-menu-btn" aria-controls="main-nav" aria-expanded="false">☰</button>
+
+      <nav id="main-nav">
+        <ul class="navbar">
+          <li><a href="./index.html">მთავარი</a></li>
+
+          <li class="dropdown">
+            <a href="#">პროდუქტები</a>
+            <div class="dropdown-menu">
+              <a href="./products/lettuce.html">სალათის ფურცლები</a>
+              <a href="./products/arugula.html">რუკოლა</a>
+              <a href="./products/microgreens.html">მიკრომწვანილები</a>
+              <a href="./products/red_kale.html">წითელი ფხალი</a>
+              <a href="./products/leek.html">პრასი</a>
+            </div>
+          </li>
+
+          <li><a href="#about">ჩვენს შესახებ</a></li>
+          <li><a href="./contact.html">კონტაქტი</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="nav-backdrop" aria-hidden="true"></div>
 <!-- Hero Section -->
 <section class="hero" id="home">
 <div class="hero-content">
