@@ -215,3 +215,51 @@ footer#contact{ background:#1e4620; color:#fff; padding:30px 0; position:relativ
 @media (max-width:768px){
   .footer-content{ flex-direction:column; align-items:flex-start; }
   }
+
+/* === Header logo: inline, no-underline, tight layout === */
+.logo { display:flex; align-items:center; gap:12px; }
+.logo a{
+  display:flex; align-items:center; gap:12px;
+  text-decoration:none; color:inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+.logo a:hover,
+.logo a:focus,
+.logo a:active{ text-decoration:none; }
+.logo a *, .logo h1{ text-decoration:none !important; }
+.logo img{ height:45px; width:auto; display:block; }
+.logo h1{ margin:0; line-height:1; color:#2e7d32; }
+
+/* თუ ჯერ კიდევ ჩნდება ხაზგასმა (ვიღაც სხვა წესის გამო), ეს ზედმეტად გაანულებს */
+header .logo a { border-bottom: none !important; }
+
+/* --- Footer mobile optimization --- */
+footer#contact{
+  background:#1e4620; color:#fff; padding:28px 0;
+}
+footer#contact .footer-content{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+footer#contact .footer-logo{ display:flex; align-items:center; gap:10px; }
+footer#contact .footer-logo img{ height:50px; filter:brightness(0) invert(1); }
+footer#contact .contact-info p{ margin:2px 0; line-height:1.5; }
+footer#contact .social-links{
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+}
+footer#contact .social-links a{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(255,255,255,.15); color:#fff; text-decoration:none; font-weight:700;
+}
+footer#contact .social-links a:hover{ background:rgba(255,255,255,.25); }
+
+/* Mobile footer layout */
+@media (max-width: 768px){
+  footer#contact .footer-content{
+    flex-direction:column;
+    align-items:flex-start; /* თუ გინდა ცენტრში: center */
+    gap:14px;
+  }
+  footer#contact .footer-logo h3{ font-size:18px; }
+  footer#contact .social-links{ gap:10px; }
+}
