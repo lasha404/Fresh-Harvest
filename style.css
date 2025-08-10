@@ -263,3 +263,15 @@ footer#contact .social-links a:hover{ background:rgba(255,255,255,.25); }
   footer#contact .footer-logo h3{ font-size:18px; }
   footer#contact .social-links{ gap:10px; }
 }
+/* მობილურ ვერსიაზე ნავბარის მენიუს ელემენტების მარცხნივ განლაგება */
+@media (max-width: 768px) {
+  #main-nav ul {
+    text-align: left;
+    padding-left: 20px;
+  }
+  #main-nav ul li {
+    display: block;
+    text-align: left;
+    padding: 10px 0;
+  }
+}
