@@ -38,6 +38,7 @@ header .container{
 
 /* Logo */
 .logo{ display:flex; align-items:center; gap:12px; white-space:nowrap; }
+.logo a{ display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; -webkit-tap-highlight-color:transparent; }
 .logo img{ height:45px; width:auto; display:block; }
 .logo h1{ margin:0; font-size:30px; line-height:1; color:var(--fh-green); }
 
@@ -66,33 +67,32 @@ header .container{
   font-size:24px; cursor:pointer;
 }
 
-/* Backdrop (inserted after header in HTML) */
+/* Backdrop */
 .nav-backdrop{
-  display:none;
-  position:fixed; inset:var(--header-h) 0 0 0; background:rgba(0,0,0,.35);
+  display:none; position:fixed; inset:var(--header-h) 0 0 0; background:rgba(0,0,0,.35);
   z-index:900; opacity:0; transition:opacity .2s ease;
 }
 body.menu-open .nav-backdrop{ display:block; opacity:1; }
 
-/* --- Mobile nav (off-canvas from top, not covering whole page) --- */
+/* --- Mobile nav (off-canvas top) --- */
 @media (max-width:768px){
   .mobile-menu-btn{ display:block; }
 
   #main-nav{
     position:fixed; left:0; right:0; top:var(--header-h);
-    max-height:calc(100vh - var(--header-h));
-    overflow:auto;
-    background:#fff;
-    transform:translateY(-8px);
+    max-height:calc(100vh - var(--header-h)); overflow:auto;
+    background:#fff; transform:translateY(-8px);
     opacity:0; visibility:hidden;
     transition:transform .2s ease, opacity .2s ease, visibility .2s;
-    z-index:1001;
-    padding:14px 16px 20px; border-top:1px solid #eef2ee;
+    z-index:1001; padding:14px 16px 20px; border-top:1px solid #eef2ee;
   }
   #main-nav.active{ transform:translateY(0); opacity:1; visibility:visible; }
   body.menu-open{ overflow:hidden; }
 
-  #main-nav > ul{ flex-direction:column; gap:16px; }
+  /* მობილურზე მარცხნივ განლაგება */
+  #main-nav > ul{ flex-direction:column; gap:16px; align-items:flex-start; }
+  #main-nav > ul li{ width:100%; }
+  #main-nav a{ width:100%; text-align:left; padding:8px 0; }
 
   /* Dropdown mobile — calm block */
   #main-nav .dropdown > a{ display:flex; align-items:center; justify-content:space-between; }
@@ -115,9 +115,7 @@ header, nav, #main-nav, .dropdown{ overflow:visible !important; }
   position:relative; display:flex; align-items:center; justify-content:center;
   text-align:center; color:#fff;
 }
-.hero::before{
-  content:''; position:absolute; inset:0; background:rgba(0,0,0,.4);
-}
+.hero::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.4); }
 .hero-content{ position:relative; z-index:1; }
 .hero h2{ font-size:64px; margin-bottom:10px; text-shadow:2px 2px 4px rgba(0,0,0,.5); }
 .hero p{ font-size:24px; text-shadow:1px 1px 3px rgba(0,0,0,.5); }
@@ -201,77 +199,29 @@ header, nav, #main-nav, .dropdown{ overflow:visible !important; }
 /* ======================
    Footer
    ====================== */
+/* Desktop/default */
 footer#contact{ background:#1e4620; color:#fff; padding:30px 0; position:relative; z-index:1; }
 .footer-content{ display:flex; justify-content:space-between; align-items:center; gap:16px; }
 .footer-logo{ display:flex; align-items:center; gap:10px; }
 .footer-logo img{ height:50px; filter:brightness(0) invert(1); }
 .contact-info p{ margin:2px 0; }
+.social-links{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 .social-links a{
   display:inline-flex; align-items:center; justify-content:center;
   width:36px; height:36px; border-radius:50%;
-  background:rgba(255,255,255,.15); color:#fff; margin-left:8px; font-weight:700; text-decoration:none;
+  background:rgba(255,255,255,.15); color:#fff; font-weight:700; text-decoration:none;
 }
 .social-links a:hover{ background:rgba(255,255,255,.25); }
+
+/* Mobile footer – ჰორიზონტალურად, wrap-ით */
 @media (max-width:768px){
-  .footer-content{ flex-direction:column; align-items:flex-start; }
+  .footer-content{
+    flex-direction:row;            /* ჰორიზონტალურად */
+    flex-wrap:wrap;                /* პატარა ეკრანზე გადაიკეცოს ლამაზად */
+    align-items:center;
+    gap:12px 18px;                 /* რიგებსა და კოლონებს შორის დაშორება */
   }
-
-/* === Header logo: inline, no-underline, tight layout === */
-.logo { display:flex; align-items:center; gap:12px; }
-.logo a{
-  display:flex; align-items:center; gap:12px;
-  text-decoration:none; color:inherit;
-  -webkit-tap-highlight-color: transparent;
-}
-.logo a:hover,
-.logo a:focus,
-.logo a:active{ text-decoration:none; }
-.logo a *, .logo h1{ text-decoration:none !important; }
-.logo img{ height:45px; width:auto; display:block; }
-.logo h1{ margin:0; line-height:1; color:#2e7d32; }
-
-/* თუ ჯერ კიდევ ჩნდება ხაზგასმა (ვიღაც სხვა წესის გამო), ეს ზედმეტად გაანულებს */
-header .logo a { border-bottom: none !important; }
-
-/* --- Footer mobile optimization --- */
-footer#contact{
-  background:#1e4620; color:#fff; padding:28px 0;
-}
-footer#contact .footer-content{
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
-}
-footer#contact .footer-logo{ display:flex; align-items:center; gap:10px; }
-footer#contact .footer-logo img{ height:50px; filter:brightness(0) invert(1); }
-footer#contact .contact-info p{ margin:2px 0; line-height:1.5; }
-footer#contact .social-links{
-  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
-}
-footer#contact .social-links a{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:40px; height:40px; border-radius:50%;
-  background:rgba(255,255,255,.15); color:#fff; text-decoration:none; font-weight:700;
-}
-footer#contact .social-links a:hover{ background:rgba(255,255,255,.25); }
-
-/* Mobile footer layout */
-@media (max-width: 768px){
-  footer#contact .footer-content{
-    flex-direction:column;
-    align-items:flex-start; /* თუ გინდა ცენტრში: center */
-    gap:14px;
-  }
-  footer#contact .footer-logo h3{ font-size:18px; }
-  footer#contact .social-links{ gap:10px; }
-}
-/* მობილურ ვერსიაზე ნავბარის მენიუს ელემენტების მარცხნივ განლაგება */
-@media (max-width: 768px) {
-  #main-nav ul {
-    text-align: left;
-    padding-left: 20px;
-  }
-  #main-nav ul li {
-    display: block;
-    text-align: left;
-    padding: 10px 0;
-  }
-}
+  .footer-logo{ order:1; }
+  .contact-info{ order:2; }
+  .social-links{ order:3; }
+   }
